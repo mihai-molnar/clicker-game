@@ -4,6 +4,7 @@ var small_enemy_scene = preload("res://scenes/enemy.tscn")
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	$Control/XPLabel.text = "EXP: " + str(Global.xp)
 	spawn_enemy("sm")
 	
 func _process(_delta):
@@ -27,7 +28,7 @@ func _on_enemy_spawn_timer_timeout():
 	
 func _on_enemy_died(points):
 	Global.xp += points
-	$Control/XPLabel.text = "XP: " + str(Global.xp)
+	$Control/XPLabel.text = "EXP: " + str(Global.xp)
 	
 func _on_large_enemy_spawner_timeout():
 	if Global.large_enemies:

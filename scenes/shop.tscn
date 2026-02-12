@@ -30,22 +30,48 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="DamageStatLabel" type="Label" parent="Stats"]
+[node name="XP" type="Label" parent="Stats"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 68.0
+offset_right = 996.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
+text = "XP"
+
+[node name="DamageLabel" type="Label" parent="Stats"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 913.0
-offset_top = 59.0
+offset_top = 108.0
 offset_right = 1117.0
-offset_bottom = 94.0
+offset_bottom = 143.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_xfvoa")
 text = "Dmg: 100
-Crit Chance: 0
-Attack Speed: 100"
+"
+
+[node name="AttackSpeedLabel" type="Label" parent="Stats"]
+layout_mode = 0
+offset_left = 957.0
+offset_top = 144.0
+offset_right = 1101.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
+text = "Attack Speed"
+
+[node name="CritChanceLabel" type="Label" parent="Stats"]
+layout_mode = 0
+offset_left = 955.0
+offset_top = 176.0
+offset_right = 1087.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
+text = "Crit Chance"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -77,8 +103,8 @@ grow_vertical = 0
 
 [node name="Size" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 159.0
-offset_right = 251.0
+offset_left = 264.0
+offset_right = 356.0
 offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
@@ -86,8 +112,8 @@ text = "Enlarge"
 
 [node name="Damage" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 298.0
-offset_right = 378.0
+offset_left = 560.0
+offset_right = 640.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
@@ -95,8 +121,8 @@ text = "Damage"
 
 [node name="AttackSpeed" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 433.0
-offset_right = 585.0
+offset_left = 872.0
+offset_right = 1024.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
@@ -104,18 +130,20 @@ text = "Attack Speed"
 
 [node name="LargeEnemies" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 628.0
-offset_right = 792.0
-offset_bottom = 31.0
+offset_left = 718.0
+offset_top = 60.0
+offset_right = 882.0
+offset_bottom = 91.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "Large Enemies"
 
 [node name="CritChance" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 854.0
-offset_right = 1018.0
-offset_bottom = 31.0
+offset_left = 359.0
+offset_top = 61.0
+offset_right = 523.0
+offset_bottom = 92.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "+ Crit Chance"

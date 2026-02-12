@@ -17,6 +17,7 @@ func _ready():
 		life = 50
 	if variant == "lg":
 		life = 70
+		scale = Vector2(1.5, 1.5)
 	$Life.text = str(life)
 	direction = Vector2.from_angle(randf() * TAU)
 
