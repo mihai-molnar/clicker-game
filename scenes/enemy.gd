@@ -43,7 +43,10 @@ func hit(dmg):
 		return
 		
 func die():
-	enemy_died.emit(1)
+	var xp = 1
+	if variant == "lg":
+		xp = 2
+	enemy_died.emit(xp)
 	var explosion = explosion_scene.instantiate()
 	explosion.position = global_position
 	get_tree().current_scene.add_child(explosion)
