@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://h1iqnilgy2iv"]
+
+[ext_resource type="Script" uid="uid://bfillaw8a64kf" path="res://scenes/explosion.gd" id="1_17npe"]
+
+[sub_resource type="Curve" id="Curve_3oo6d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_17npe"]
+curve = SubResource("Curve_3oo6d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nfeox"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_17npe")
+
+[node name="Explosion" type="GPUParticles2D"]
+emitting = false
+amount = 25
+lifetime = 0.4
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_nfeox")
+script = ExtResource("1_17npe")

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bixjd8le13nkb"]
+
+[ext_resource type="Script" uid="uid://cyfducx212of" path="res://scenes/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="Gradient" id="Gradient_fovp8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55422"]
+gradient = SubResource("Gradient_fovp8")
+width = 32
+height = 32
+fill_from = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehae5"]
+size = Vector2(32, 32)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_7p1mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.26618072, 0.7166127, 0.85762954, 1)
+texture = SubResource("GradientTexture2D_55422")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ehae5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Life" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

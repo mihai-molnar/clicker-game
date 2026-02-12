@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgto76vlk31v"]
+
+[ext_resource type="Script" uid="uid://c24v3m1whymx1" path="res://scenes/shop.gd" id="1_lx5au"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lx5au")
+
+[node name="Size" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
+text = "Enlarge"
+
+[node name="Damage" type="Button" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 181.0
+offset_bottom = 31.0
+toggle_mode = true
+text = "Damage"
+
+[node name="AttackSpeed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_right = 325.0
+offset_bottom = 31.0
+toggle_mode = true
+text = "Attack Speed"
+
+[node name="LargeEnemies" type="Button" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_right = 492.0
+offset_bottom = 31.0
+toggle_mode = true
+text = "Large Enemies"
+
+[node name="CritChance" type="Button" parent="."]
+layout_mode = 0
+offset_left = 558.0
+offset_right = 669.0
+offset_bottom = 31.0
+toggle_mode = true
+text = "+ Crit Chance"
+
+[connection signal="toggled" from="Size" to="." method="_on_size_toggled"]
+[connection signal="toggled" from="Damage" to="." method="_on_damage_toggled"]
+[connection signal="toggled" from="AttackSpeed" to="." method="_on_attack_speed_toggled"]
+[connection signal="toggled" from="LargeEnemies" to="." method="_on_large_enemies_toggled"]
+[connection signal="toggled" from="CritChance" to="." method="_on_crit_chance_toggled"]
