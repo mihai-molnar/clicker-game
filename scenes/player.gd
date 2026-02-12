@@ -22,7 +22,6 @@ func _on_shoot_timer_timeout():
 	var crit = 1
 	if rand <= Global.crit_chance:
 		crit = 2
-	print("crit", crit, " chance ", Global.crit_chance)
 	if enemies.is_empty():
 		return
 	for enemy in enemies:

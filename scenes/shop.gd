@@ -1,11 +1,16 @@
 extends Control
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$Stats/DamageStatLabel.text = "Damage: " + str(Global.damage)
+	
 func _process(_delta):
 	if Input.is_action_just_pressed("Shop"):
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_damage_toggled(_toggled_on):
 	Global.damage += 10
+	$Stats/DamageStatLabel.text = "Damage: " + str(Global.damage)
 
 func _on_attack_speed_toggled(_toggled_on):
 	Global.attack_speed = 0.8

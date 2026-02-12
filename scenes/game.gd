@@ -3,6 +3,7 @@ extends Node2D
 var small_enemy_scene = preload("res://scenes/enemy.tscn")
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	spawn_enemy("sm")
 	
 func _process(_delta):

@@ -50,6 +50,27 @@ offset_bottom = 31.0
 toggle_mode = true
 text = "+ Crit Chance"
 
+[node name="Stats" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamageStatLabel" type="Label" parent="Stats"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 980.0
+offset_top = 11.0
+offset_right = 1117.0
+offset_bottom = 46.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Dmg: 100
+Crit Chance: 0
+Attack Speed: 100"
+
 [connection signal="toggled" from="Size" to="." method="_on_size_toggled"]
 [connection signal="toggled" from="Damage" to="." method="_on_damage_toggled"]
 [connection signal="toggled" from="AttackSpeed" to="." method="_on_attack_speed_toggled"]
