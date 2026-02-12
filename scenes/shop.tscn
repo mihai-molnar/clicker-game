@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgto76vlk31v"]
+[gd_scene load_steps=3 format=3 uid="uid://dgto76vlk31v"]
 
 [ext_resource type="Script" uid="uid://c24v3m1whymx1" path="res://scenes/shop.gd" id="1_lx5au"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="2_xfvoa"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ script = ExtResource("1_lx5au")
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "Enlarge"
 
@@ -23,6 +25,7 @@ layout_mode = 0
 offset_left = 109.0
 offset_right = 181.0
 offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "Damage"
 
@@ -31,6 +34,7 @@ layout_mode = 0
 offset_left = 216.0
 offset_right = 325.0
 offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "Attack Speed"
 
@@ -39,6 +43,7 @@ layout_mode = 0
 offset_left = 371.0
 offset_right = 492.0
 offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "Large Enemies"
 
@@ -47,6 +52,7 @@ layout_mode = 0
 offset_left = 558.0
 offset_right = 669.0
 offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "+ Crit Chance"
 
@@ -67,6 +73,7 @@ offset_right = 1117.0
 offset_bottom = 46.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xfvoa")
 text = "Dmg: 100
 Crit Chance: 0
 Attack Speed: 100"
