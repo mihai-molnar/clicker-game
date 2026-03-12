@@ -18,6 +18,7 @@ func _ready():
 	if variant == "lg":
 		life = 70
 		scale = Vector2(1.5, 1.5)
+		$Sprite2D.texture = load("res://assets/orange.png")
 	$Life.text = str(life)
 	direction = Vector2.from_angle(randf() * TAU)
 
