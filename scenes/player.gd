@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var enemies: Array = []
+signal deccrease_player_life(val)
 
 func _ready():
 	$Sprite2D.modulate.a = 0.2
@@ -15,9 +16,10 @@ func flash():
 	$Sprite2D.modulate.a = 1.0
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "modulate:a", 0.2, 0.15)
-
+	
 func _on_shoot_timer_timeout():
 	flash()
+	deccrease_player_life.emit(5)
 	var rand = randf_range(0, 1);
 	var crit = 1
 	if rand <= Global.crit_chance:

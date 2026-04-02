@@ -73,6 +73,15 @@ offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 text = "Crit Chance"
 
+[node name="Life" type="Label" parent="Stats"]
+layout_mode = 0
+offset_left = 955.0
+offset_top = 33.0
+offset_right = 995.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
+text = "Life: 100"
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -103,8 +112,8 @@ grow_vertical = 0
 
 [node name="Size" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 264.0
-offset_right = 356.0
+offset_left = 152.0
+offset_right = 244.0
 offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
@@ -112,8 +121,8 @@ text = "Enlarge"
 
 [node name="Damage" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 560.0
-offset_right = 640.0
+offset_left = 420.0
+offset_right = 500.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
@@ -121,12 +130,22 @@ text = "Damage"
 
 [node name="AttackSpeed" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 872.0
-offset_right = 1024.0
-offset_bottom = 31.0
+offset_left = 650.0
+offset_top = 1.0
+offset_right = 802.0
+offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("2_xfvoa")
 toggle_mode = true
 text = "Attack Speed"
+
+[node name="Life" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 935.0
+offset_right = 991.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("2_xfvoa")
+toggle_mode = true
+text = "Life"
 
 [node name="LargeEnemies" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -163,5 +182,6 @@ mouse_filter = 2
 [connection signal="toggled" from="Buttons/Size" to="." method="_on_size_toggled"]
 [connection signal="toggled" from="Buttons/Damage" to="." method="_on_damage_toggled"]
 [connection signal="toggled" from="Buttons/AttackSpeed" to="." method="_on_attack_speed_toggled"]
+[connection signal="toggled" from="Buttons/Life" to="." method="_on_life_toggled"]
 [connection signal="toggled" from="Buttons/LargeEnemies" to="." method="_on_large_enemies_toggled"]
 [connection signal="toggled" from="Buttons/CritChance" to="." method="_on_crit_chance_toggled"]

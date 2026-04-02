@@ -5,7 +5,7 @@ const MAX_SIZE = 3.5
 const MAX_CRIT_CHANCE = 1.0
 
 func _ready():
-	#Global.xp = 500 #remove this
+	Global.xp = 500 #remove this
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	set_button_labels()
 	set_stats_labels()
@@ -19,12 +19,14 @@ func _ready():
 		set_button_disabled($Buttons/CritChance)
 
 func set_stats_labels():
+	$Stats/Life.text = "Life: " + str(Global.player_life)
 	$Stats/XP.text = "EXP: " + str(Global.xp)
 	$Stats/DamageLabel.text = "Damage: " + str(Global.damage)
 	$Stats/AttackSpeedLabel.text = "Attack Speed: " + str(Global.attack_speed)
 	$Stats/CritChanceLabel.text = "Crit Chance: " + str(Global.crit_chance * 100) + "%"
 	
 func set_button_labels():
+	$Buttons/Life.text = "Life (" + str(Global.life_cost) +")"
 	$Buttons/Size.text = "Size (" + str(Global.size_cost) + ")"
 	$Buttons/Damage.text = "Damage (" +str(Global.damage_cost) + ")"
 	$Buttons/AttackSpeed.text = "Atack Speed (" + str(Global.attack_speed_cost) + ")"
@@ -95,3 +97,11 @@ func _on_crit_chance_toggled(_toggled_on):
 		adjust_xp_label()
 	if Global.crit_chance >= MAX_CRIT_CHANCE:
 		set_button_disabled($Buttons/CritChance)
+
+func _on_life_toggled(_toggled_on):
+	if Global.xp >= Global.life_cost:
+		Global.player_life += 50
+		Global.xp -= Global.life_cost
+		Global.life_cost = increment_cost(Global.life_cost)
+		$Stats/Life.text = "Life: " + str(Global.player_life)
+		adjust_xp_label()
